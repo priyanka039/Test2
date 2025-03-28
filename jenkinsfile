@@ -16,15 +16,7 @@ pipeline {
                 bat 'mvn test'  // run the maven test
             }
         }
-        stage('Run JAR') {
-            steps {
-                script{
-                    //RUN THE JAR FILE AND CAPTURE THE OUTPUT
-                    def output = bat(script: 'java -jar target/test-1.0-SNAPSHOT.jar', returnStdout: true).trim()
-                    echo "Output from JAR: ${output}" // print the output
-                }
-            }
-        }
+        
     }
 
 }
