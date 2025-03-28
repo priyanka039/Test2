@@ -16,20 +16,15 @@ pipeline {
                 sh 'mvn test'  // run the maven test
             }
         }
-<<<<<<< HEAD
-=======
-
-        stage('Run JAR'){
-            steps{
+        stage('Run JAR') {
+            steps {
                 script{
-                    //Run the JAR file and capture the output
-                    def output = sh(script: 'java -jar target/Test2-0.0.1-SNAPSHOT.jar', returnStdout: true).trim()
-
-                    //Print output to Jenkins console
-                    echo "Output from JAR: ${output}"
+                    //RUN THE JAR FILE AND CAPTURE THE OUTPUT
+                    def output = sh(script: 'java -jar target/test-1.0-SNAPSHOT.jar', returnStdout: true).trim()
+                    echo "Output from JAR: ${output}" // print the output
                 }
             }
         }
->>>>>>> de6f1a6 (Changed jenkins file)
     }
+
 }
